@@ -59,13 +59,86 @@
 }
 
 /*  ESERCIZIO 9 HOVER + filter greyscale e sepia + scale */
-
-.ex-9-img:hover {
+.ex-9-img {
   transition: all 2s;
 }
-
 .ex-9-img:hover {
   border-radius:25px;
   filter: grayscale(70%) sepia(50%);
   transform: scale(1.5);
+}
+
+/*  ESERCIZIO 10 animation ROTATE */
+/*  usare linear per non avere accelerazioni o decellerazioni */
+.ex-10-icon {
+  animation: animazione1 linear 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes animazione1 {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(-360deg);}
+}
+
+/*  ESERCIZIO 11 animation ROTATE con Hover */
+/*  usare linear per non avere accelerazioni o decellerazioni */
+.ex-11-icon:hover {
+  animation: animazione2 linear 1s;
+}
+@keyframes animazione2 {
+  0% { transform: rotate(0deg);}
+  80% { transform: rotate(270deg);}
+  100% { transform: rotate(0deg);}
+}
+
+
+/*  ESERCIZIO 12 animation ROTATE con Hover */
+/*  usare linear per non avere accelerazioni o decelerazioni */
+.ex-12-button:hover .ex-12-top-white {
+  animation: animazione12top linear 2s;
+}
+.ex-12-button:hover .ex-12-bottom-white {
+  animation: animazione12bottom linear 2s;
+}
+@keyframes animazione12top {
+  0% {left:10%;}
+  50% {left:80%; transform: translateX(-50%);}
+  100% {left:10%;}
+}
+@keyframes animazione12bottom {
+  0% {right:20%;}
+  50% {right:80%; transform: translateX(50%);}
+  100% {right:20%;}
+}
+
+/*  ESERCIZIO 13 animation ROTATE con Hover */
+/*  usare linear per non avere accelerazioni o decelerazioni */
+.ex-13-button:hover .ex-13-top-white {
+  animation: animazione13top linear 3s;
+}
+.ex-13-button:hover .ex-13-bottom-white {
+  animation: animazione13bottom linear 3s;
+}
+
+
+/*
+100% = percentuale tempo
+30%  = tempo trascorso per coprire la distanza della base
+20%  = tempo trascorso per coprire la distanza dell'altezza del rettangolo */
+
+@keyframes animazione13top {
+  0% {top:-10px; left:10%;}
+  20% {top:-10px; left:100%;transform: translateX(-50%);}
+  40% {top: calc(100% - 10px); transform: translatey(-50%); left:100%;transform: translateX(-50%);}
+  70% {top: calc(100% - 10px); transform: translatey(-50%);left:0%;transform: translateX(-50%);}
+  90% {top:-10px; left:0%; transform: translateX(-50%);}
+  100% {top:-10px; left:10%;}
+}
+
+@keyframes animazione13bottom {
+  0% {bottom:-10px; right:10%;}
+  20% {bottom:-10px; right:100%; transform: translateX(50%);}
+  40% {bottom: calc(100% - 10px); transform: translatey(-50%); right:100%;transform: translateX(50%);}
+  70% {bottom: calc(100% - 10px); transform: translatey(-50%);right:0%;transform: translateX(50%);}
+  90% {bottom:-10px; right:0%; transform: translateX(50%);}
+  100% {bottom:-10px; right:10%;}
 }
